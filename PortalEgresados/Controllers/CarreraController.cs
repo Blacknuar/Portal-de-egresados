@@ -62,7 +62,7 @@ namespace PortalEgresados.Controllers
             {
                 ModelState.AddModelError("", "Agregue una nueva Carrera");
             }
-            else if (Context.Carreras.Any(x => x.Nombre == c.Nombre)
+            else if (Context.Carreras.Any(x => x.Nombre == c.Nombre))
             {
                 ModelState.AddModelError("", "Esta carrera ya existe");
             }
