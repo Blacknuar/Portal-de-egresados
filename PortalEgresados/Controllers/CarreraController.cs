@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace PortalEgresados.Controllers
 {
-    //nombre corregido
     public class CarreraController : Controller
     {
         public itesrcne_egresadosContext Context { get; }
@@ -21,7 +20,6 @@ namespace PortalEgresados.Controllers
             var carreras = Context.Carreras.OrderBy(x => x.Nombre);
             return View(carreras);
         }
-
         public IActionResult Agregar()
         {
             return View();
@@ -103,6 +101,5 @@ namespace PortalEgresados.Controllers
             }
             return View();
         }
-
     }
 }
