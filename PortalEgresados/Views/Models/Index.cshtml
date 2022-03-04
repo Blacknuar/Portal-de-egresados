@@ -1,7 +1,7 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
-}
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@Html.ValidationSummary() 
 
-<h1>Index</h1>
+@{
+    Layout = "MasterPage";
+}
 

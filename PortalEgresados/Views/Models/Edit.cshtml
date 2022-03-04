@@ -1,7 +1,11 @@
-﻿
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@Html.ValidationSummary() 
+
 @{
-    ViewData["Title"] = "Edit";
+    Layout = "MasterPage";
 }
 
-<h1>Edit</h1>
-
+<h1>Add</h1>
+<form method="post" asp-action="Edit" asp-controller="Carrera">
+@Html.ValidationSummary()
+</form>
