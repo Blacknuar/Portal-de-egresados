@@ -1,0 +1,104 @@
+﻿body {
+    background-color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+}
+
+main h1 {
+    padding-bottom: 5px;
+    border-bottom: #000000 solid 2px;
+    margin-bottom: 2.5%;
+}
+
+/* Todo lo relacionado con "ListView" */
+
+.listview {
+    display: flex;
+    flex-direction: column;
+}
+
+    .listview div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 5%;
+        width: 100%;
+        margin-bottom: 0.5%;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        border-bottom: #c2c2c2 solid 1px;
+    }
+
+        .listview div:last-child {
+            border-bottom: none;
+        }
+
+        .listview div:hover {
+            background-color: #c2c2c2;
+        }
+
+        .listview div nav {
+            display: flex;
+            flex-direction: column;
+            margin-left: 1.5%;
+        }
+
+.valorprimario {
+    font-size: x-large;
+    margin: 0%;
+    padding: 0%;
+}
+
+.valorsecundario {
+    font-size: medium;
+    margin: 0%;
+    padding: 0%;
+}
+
+.submenu {
+    align-self: center;
+    font-size: xx-large;
+    color: #000000;
+    text-decoration: none;
+    margin-right: 1.5%;
+}
+
+/* Esto es el FAB */
+
+.fab {
+    width: 70px;
+    height: 70px;
+    border: #000000 solid 1px;
+    font-size: 65px;
+    text-align: center;
+    line-height: 65px;
+    color: #000000;
+    text-decoration: none;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    border-radius: 50%;
+    transition: all 0.1s ease-in-out;
+}
+
+    .fab:hover {
+        transform: scale(1.25);
+        background-color: #c2c2c2;
+    }
+
+/* Esto que o que? No jala xd */
+
+.contextual {
+    font-size: 0.9em;
+    width: 100px;
+    color: white;
+    background-color: forestgreen;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    position: absolute;
+    left: calc(-100px + 100% - 10px);
+    z-index: 10;
+    text-align: left;
+    font-weight: normal;
+    display: none;
+}
