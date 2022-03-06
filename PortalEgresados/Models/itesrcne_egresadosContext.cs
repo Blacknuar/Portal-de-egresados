@@ -32,7 +32,9 @@ namespace PortalEgresados.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            { 
+            {
+                optionsBuilder.UseMySql("server=204.93.216.11;user=itesrcne_proy22;password=4veSZ42@Eii4SMt;database=itesrcne_egresados", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.3.29-mariadb"));
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
