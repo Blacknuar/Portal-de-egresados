@@ -1,12 +1,39 @@
 ﻿var menu = document.querySelector(".contextual");
+var listview = document.querySelector(".listview");
 
-document.addEventListener("click", function (event) {
-    if (event.target.tagName == "TD" && event.target.parentNode.children.length - 1 == event.target.cellIndex) {
-        event.target.appendChild(menu);
-        menu.style.display = "block";
-    }
-    else if (menu.style.display == "block") {
-        menu.style.display = "none";
+if (listview) {
+
+    document.addEventListener("click", function (event) {
+        if (event.target.className == "submenu") {
+            event.target.parentNode.appendChild(menu);
+            if (event.target.dataset.id) {
+                setId(event.target.dataset.id);
+            }
+            menu.style.display = "block";
+        }
+        else {
+            menu.style.display = "none";
+        }
+    });
+
+    function setId(id) {
+        var enlaces = menu.querySelectorAll("a");
+
+        enlaces.forEach(x => {
+            x.href = updateQueryStringParameter(x.href, "id", id);
+        });
+
+
     }
 
-})
+    function updateQueryStringParameter(uri, key, value) {
+        var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+        var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+        if (uri.match(re)) {
+            return uri.replace(re, '$1' + key + "=" + value + '$2');
+        }
+        else {
+            return uri + separator + key + "=" + value;
+        }
+    }
+}
